@@ -1,10 +1,11 @@
-import React from "react";
+import React from "react"
 
 const About = () => {
   return (
     <div
       name="about"
-      className="w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white"
+      /* className="w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white" */
+      className="w-full h-screen bg-gradient-to-b "
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
@@ -34,7 +35,7 @@ const About = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About
