@@ -51,4 +51,10 @@
   margin-right: 1rem;
 }
 
+.imageStyle {
+  height: 300px; /* Adjust this value as needed */
+  width: 100%;
+  object-fit: cover;
+}
+
 /* Add more styles as needed */

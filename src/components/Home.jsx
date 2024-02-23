@@ -1,40 +1,62 @@
-import React from "react"
-//import HeroImage from "../assets/heroImage.png"
-//import blank from "../assets/blank.jpg"
+import React, { useState, useEffect } from "react"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md"
 import { Link } from "react-scroll"
+import Typewriter from "typewriter-effect"
 
 const Home = () => {
-  return (
-    <div
-      name="home"
-      /*   className="h-screen w-full bg-gradient-to-b from-white via-white white" */
-      className="h-screen w-full bg-gradient-to-b "
-    >
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
-        <div className="flex flex-col justify-center h-full">
-          <h2 /* className="text-4xl sm:text-7xl font-bold text-black" */
-            className="text-4xl sm:text-7xl font-bold text-white"
-          >
-            I'm a Full Stack Developer
-          </h2>
-          <p /* className="text-gray-500 py-4 max-w-md" */
-            className="text-gray-500 text-opacity-70 py-4 max-w-md"
-          >
-            I have 8 years of experience building and desgining software.
-            Currently, I love to work on web application using technologies like
-            React, Tailwind, Next JS and GraphQL.
-          </p>
+  const [showText, setShowText] = useState(false)
 
+  useEffect(() => {
+    // Typewriter effect for the second line
+    const introText2 = "I'm a Full Stack Developer."
+    let currentIndex = 0
+    const interval = setInterval(() => {
+      if (currentIndex <= introText2.length) {
+        setShowText(introText2.slice(0, currentIndex))
+        currentIndex++
+      } else {
+        currentIndex = 0
+        setShowText("")
+      }
+    }, 100) // Adjust the speed of typing here
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div name="home" className="h-screen w-full bg-gradient-to-b ">
+      <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center justify-center h-full px-4">
+        {/* Second line with Typewriter effect */}
+        <div className="flex flex-col justify-center md:w-1/2">
+          <h2
+            style={{ fontSize: "2rem", color: "#84A7A1" }}
+            className="text-5xl sm:text-7xl font-bold text-white"
+          >
+            <Typewriter
+              options={{
+                autoStart: true,
+                loop: true,
+                delay: 100,
+                strings: ["I'm a Full Stack Developer"],
+                cursor: "",
+              }}
+            />
+          </h2>
+          {/* Uncomment to show the first line */}
+          {/* <h3 style={{ marginBottom: "0.5rem", fontSize: "2.5rem" }}>{showText}</h3> */}
+          <p className="text-gray-500 text-opacity-70 py-4 max-w-md text-justify font-bold">
+            I have 2 years of experience in web development, specializing in
+            projects using the MERN stack. With a strong foundation in
+            JavaScript, I excel in creating dynamic and responsive web
+            applications.
+          </p>
           <div>
             <Link
               to="portfolio"
               smooth
               duration={500}
-              /*  className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer" */
-              style={{ backgroundColor: '#2E8A99' }}
+              style={{ backgroundColor: "#2E8A99" }}
               className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md cursor-pointer"
-           
             >
               Portfolio
               <span className="group-hover:rotate-90 duration-300">
@@ -44,13 +66,10 @@ const Home = () => {
           </div>
         </div>
 
-        <div>
-          <img
-            //src={HeroImage}
-            // alt="my profile"
-            className="rounded-2xl mx-auto w-2/3 md:w-full"
-          />
-        </div>
+        {/* Commented out the photo */}
+        {/* <div className="md:w-1/2">
+          <img src={profilePic} alt="Profile" className="mx-auto" />
+        </div> */}
       </div>
     </div>
   )

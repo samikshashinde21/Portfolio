@@ -78,7 +78,7 @@ const Experience = () => {
           <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
             Experience
           </p>
-          <p className="py-6" style={{ color: "#84A7A1" }}>
+          <p className="py-6 font-bold" style={{ color: "#2E8A99" }}>
             Technologies I've worked with
           </p>
         </div>

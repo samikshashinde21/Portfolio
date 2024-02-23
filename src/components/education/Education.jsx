@@ -4,11 +4,11 @@ import "./education.css"
 const Education = () => {
   return (
     <section id="education">
-      <h5>Learn Lead Inspire</h5>
-      <h2>Education</h2>
+      <h5 style={{ color: "#fff" }}>Learn Lead Inspire</h5>
+      <h2 style={{ color: "#2E8A99" }}>Education</h2>
       <div className="container educations__container">
         <article className="education">
-          <div className="education__head">
+          <div className="education__head" style={{ background: "#2E8A99" }}>
             <h3>B. Tech (E&TC)</h3>
           </div>
           <ul className="education__list">
@@ -26,7 +26,7 @@ const Education = () => {
         {/* END OF Btech */}
         <article className="education">
           <div className="hello">
-            <div className="education__head">
+            <div className="education__head" style={{ background: "#2E8A99" }}>
               <h3>12th HSC</h3>
             </div>
             <ul className="education__list">
@@ -44,7 +44,7 @@ const Education = () => {
         </article>
         {/* END OF HSC*/}
         <article className="education">
-          <div className="education__head">
+          <div className="education__head" style={{ background: "#2E8A99" }}>
             <h3>10th SSC</h3>
           </div>
           <ul className="education__list">
