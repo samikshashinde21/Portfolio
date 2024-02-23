@@ -2,15 +2,25 @@ import React from "react"
 import "./project.css"
 import IMG1 from "../../assets/portfolio/pharmacy.jpg"
 import IMG2 from "../../assets/portfolio/badminton.jpg"
-import IMG3 from "../../assets/portfolio/home.jpg"
+import IMG3 from "../../assets/portfolio/homeservices.jpg"
 
 const Projects = () => (
-  <section id="portfolio" className="portfolio-section">
-    <h5 style={{ color: "#fff" }}>Projects with Programming Languages</h5>
-    <h2 style={{ color: "#2E8A99" }}>My Projects</h2>
+  <section id="portfolio" className=" portfolio-section justify-center w-full">
+    <h2 style={{ color: "#2E8A99", marginBottom: "1rem" }}>
+      Projects with Programming Languages
+    </h2>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "1rem",
+        marginBottom: "1rem",
+      }}
+    >
+      <h1 style={{ color: "#fff", marginBottom: "1rem" }}>My Projects</h1>
+    </div>
     <div className="container portfolio__container">
       {/* New Projects Updated */}
-
       <article className="portfolio__item">
         <div className="portfolio__item-content">
           <img className="imageStyle" src={IMG1} alt="" />
@@ -64,6 +74,7 @@ const Projects = () => (
         </div>
       </article>
     </div>
+    {/* Center "My Projects" */}
   </section>
 )
 
